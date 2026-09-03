@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+if [[ -f "${PWD}/.env" ]]; then
+    set -a
+    source "${PWD}/.env"
+    set +a
+fi
+
+exec /entrypoint.sh "$@"

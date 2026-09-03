@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "NRP/qwen3",
+  "provider": {
+    "NRP": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NRP",
+      "options": {
+        "baseURL": "https://ellm.nrp-nautilus.io/v1",
+        "apiKey": "{env:NRP_API_KEY}"
+      },
+      "models": {
+        "qwen3": {
+          "name": "qwen3",
+          "limit": {
+            "context": 1010000,
+            "output": 100000
+          },
+          "modalities": {
+            "input": ["text", "image", "video"],
+            "output": ["text"]
+          }
+        },
+        "deepseek-v4-flash": {
+          "name": "deepseek-v4-flash",
+          "limit": {
+            "context": 1048576,
+            "output": 100000
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "kimi": {
+          "name": "kimi",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text", "image", "video"],
+            "output": ["text"]
+          }
+        }
+      }
+    },
+    "kilo-anon": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Kilo Anonymous",
+      "options": {
+        "baseURL": "https://api.kilo.ai/api/gateway"
+      },
+      "models": {
+        "kilo-auto/free": {
+          "name": "Kilo Auto Free"
+        }
+      }
+    }
+  }
+}
